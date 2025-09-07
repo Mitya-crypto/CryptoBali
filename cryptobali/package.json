@@ -1,7 +1,0 @@
-{
-  "name": "cryptobali",
-  "private": true,
-  "workspaces": [
-    "apps/*"
-  ]
-}
