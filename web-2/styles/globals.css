@@ -5,21 +5,20 @@
 html, body, #__next { height: 100%; }
 body { @apply bg-black text-white antialiased; }
 
-.ocean-wrap { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
-.theme-day   { background: linear-gradient(180deg, #dff8ff 0%, #b9fff3 30%, #8be9dd 60%, #3ecbc1 100%); }
+/* Океанские темы (фон по времени Бали) */
+.ocean-wrap{ position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.theme-day{    background: linear-gradient(180deg, #dff8ff 0%, #b9fff3 30%, #8be9dd 60%, #3ecbc1 100%); }
 .theme-sunset{ background: radial-gradient(120% 120% at 50% 20%, #ffd1a1 0%, #ff8b5d 35%, #245b68 100%); }
-.theme-night { background: radial-gradient(100% 100% at 50% 20%, #0b1221 0%, #0b1a2e 40%, #061019 100%); }
+.theme-night{  background: radial-gradient(100% 100% at 50% 20%, #0b1221 0%, #0b1a2e 40%, #061019 100%); }
 
-.waves { position:absolute; left:0; right:0; bottom:-2px; height:26vh; }
-.waves:before, .waves:after { content:""; position:absolute; left:-25%; right:-25%; top:0; bottom:0; }
-.waves { background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="200" viewBox="0 0 1440 200"><path fill="rgba(255,255,255,0.35)" d="M0,160L60,144C120,128,240,96,360,85.3C480,75,600,85,720,112C840,139,960,181,1080,186.7C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"/></svg>') repeat-x; background-size:200% 100%; animation:wave1 18s linear infinite; opacity:.5 }
-.waves:before{ background:inherit; animation:wave2 28s linear infinite; opacity:.35; filter:blur(1px); }
-.waves:after { background:inherit; animation:wave3 40s linear infinite; opacity:.2; filter:blur(2px); }
+/* Упрощённая «полоса воды» без SVG и анимации — совместимо с Vercel */
+.waves{
+  position:absolute; left:0; right:0; bottom:-2px; height:26vh;
+  background: linear-gradient(to top, rgba(255,255,255,.25), rgba(255,255,255,0));
+  opacity:.4;
+}
 
-@keyframes wave1{ from{background-position-x:0} to{background-position-x:200%} }
-@keyframes wave2{ from{background-position-x:0} to{background-position-x:-200%} }
-@keyframes wave3{ from{background-position-x:0} to{background-position-x:200%} }
-
+/* UI-хелперы */
 .card { @apply bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg; }
 .btn { @apply inline-flex items-center justify-center rounded-xl font-medium px-5 py-3 transition; }
 .btn-primary { @apply bg-brand text-white hover:opacity-90; }
