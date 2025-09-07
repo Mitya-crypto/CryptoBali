@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body, #__next { height: 100%; }
-body { @apply bg-black text-white antialiased; }
+body { background: #000; color: #fff; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* Океанские темы (фон по времени Бали) */
 .ocean-wrap{ position: fixed; inset: 0; z-index: -1; overflow: hidden; }
@@ -11,17 +11,33 @@ body { @apply bg-black text-white antialiased; }
 .theme-sunset{ background: radial-gradient(120% 120% at 50% 20%, #ffd1a1 0%, #ff8b5d 35%, #245b68 100%); }
 .theme-night{  background: radial-gradient(100% 100% at 50% 20%, #0b1221 0%, #0b1a2e 40%, #061019 100%); }
 
-/* Упрощённая «полоса воды» без SVG и анимации — совместимо с Vercel */
+/* Простая «полоса воды» (без SVG/анимаций) */
 .waves{
   position:absolute; left:0; right:0; bottom:-2px; height:26vh;
   background: linear-gradient(to top, rgba(255,255,255,.25), rgba(255,255,255,0));
   opacity:.4;
 }
 
-/* UI-хелперы */
-.card { @apply bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg; }
-.btn { @apply inline-flex items-center justify-center rounded-xl font-medium px-5 py-3 transition; }
-.btn-primary { @apply bg-brand text-white hover:opacity-90; }
-.btn-ghost { @apply bg-white/10 text-white hover:bg-white/20; }
-.input { @apply mt-1 block w-full rounded-xl bg-white/5 border-white/20 text-white placeholder-white/60; }
-.label { @apply text-white/80 text-sm; }
+/* Вспомогательные классы (чистый CSS, без @apply) */
+.card{
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius: 0.75rem; font-weight:600; padding:0.75rem 1.25rem; transition:.2s;
+}
+.btn-primary{ background:#14b8a6; color:#fff; }
+.btn-primary:hover{ opacity:.9; }
+.btn-ghost{ background: rgba(255,255,255,0.10); color:#fff; }
+.btn-ghost:hover{ background: rgba(255,255,255,0.20); }
+.input{
+  margin-top:.25rem; width:100%; border-radius: .75rem;
+  background: rgba(255,255,255,0.05); color:#fff;
+  border:1px solid rgba(255,255,255,0.20); padding:.625rem .875rem;
+}
+.input::placeholder{ color: rgba(255,255,255,0.60); }
+.label{ color: rgba(255,255,255,0.80); font-size: .875rem; }
