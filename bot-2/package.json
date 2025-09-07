@@ -3,15 +3,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch index.ts",
-    "start": "node index.js"
+    "dev": "node --loader ts-node/esm index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "dependencies": {
+    "better-sqlite3": "9.4.0",
+    "crypto-js": "4.2.0",
+    "dotenv": "16.4.5",
+    "qrcode": "1.5.3",
     "telegraf": "4.16.3",
-    "dotenv": "16.4.5"
+    "tronweb": "5.3.1",
+    "ts-node": "10.9.2"
   },
   "devDependencies": {
-    "tsx": "4.16.2",
+    "@types/node": "20.14.10",
+    "@types/qrcode": "1.5.5",
     "typescript": "5.5.4"
   }
 }
