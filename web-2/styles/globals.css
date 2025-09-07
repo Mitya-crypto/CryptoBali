@@ -20,9 +20,9 @@ body { @apply bg-black text-white antialiased; }
 @keyframes wave2{ from{background-position-x:0} to{background-position-x:-200%} }
 @keyframes wave3{ from{background-position-x:0} to{background-position-x:200%} }
 
-.card { @apply bg-white/8 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg; }
+.card { @apply bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg; }
 .btn { @apply inline-flex items-center justify-center rounded-xl font-medium px-5 py-3 transition; }
 .btn-primary { @apply bg-brand text-white hover:opacity-90; }
-.btn-ghost { @apply bg-white/10 text-white hover:bg-white/15; }
+.btn-ghost { @apply bg-white/10 text-white hover:bg-white/20; }
 .input { @apply mt-1 block w-full rounded-xl bg-white/5 border-white/20 text-white placeholder-white/60; }
 .label { @apply text-white/80 text-sm; }
