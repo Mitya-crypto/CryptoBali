@@ -1,4 +1,5 @@
 'use client';
+import Connect from "@/components/wallet/Connect";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import SendTonForm from "@/components/wallet/SendTonForm";
