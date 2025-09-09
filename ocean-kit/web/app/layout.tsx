@@ -1,19 +1,19 @@
-import "./globals.css";
-import { TonConnectUIProvider } from "@tonconnect/ui-react";
+import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
-export const metadata = {
-  title: "CRYPTOBALI Ocean",
-  description: "TON miniapp for TON/Jetton with QR and AML",
-};
+const TonConnectProvider = dynamic(
+  () => import('@/components/providers/TonConnectProvider'),
+  { ssr: false }
+);
+
+export const metadata: Metadata = { title: 'CryptoBali' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const manifestUrl = `${process.env.NEXT_PUBLIC_WEBAPP_URL || "http://localhost:3000"}/tonconnect-manifest.json`;
   return (
-    <html lang="ru">
+    <html lang="en">
       <body>
-        <TonConnectUIProvider manifestUrl={manifestUrl}>
-          <div className="wrap">{children}</div>
-        </TonConnectUIProvider>
+        <TonConnectProvider>{children}</TonConnectProvider>
       </body>
     </html>
   );

@@ -28,6 +28,7 @@ export default function Home() {
 
   return (
     <main>
+      <div style='margin:12px 0'><span>Connect: </span><span><Connect /></span></div>
       <h1 style={{marginTop:8}}>CRYPTOBALI Ocean</h1>
       <div className="tabs">
         <button className={`tabbtn ${tab==='wallet'?'active':''}`} onClick={()=>setTab('wallet')}>Кошелёк</button>
