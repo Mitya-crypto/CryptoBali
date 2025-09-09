@@ -1,6 +1,10 @@
+// next.config.js
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  experimental: { typedRoutes: true }
+  typedRoutes: true, 
+  outputFileTracingRoot: path.resolve(__dirname, '..'),
 };
-export default nextConfig;
+
+module.exports = nextConfig;
