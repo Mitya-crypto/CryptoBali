@@ -38,4 +38,7 @@
   "exclude": [
     "node_modules"
   ]
+{
+  "extends": "next/tsconfig.json",
+  "exclude": ["app/**/*.backup.tsx", "app/page.backup.tsx"]
 }
