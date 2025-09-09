@@ -21,3 +21,12 @@ ocean-kit/**/node_modules/
 .DS_Store
 package-lock.json
 ocean-kit/**/package-lock.json
+node_modules/
+.next/
+out/
+.vercel/
+dist/
+build/
+.DS_Store
+.env
+.env.*
