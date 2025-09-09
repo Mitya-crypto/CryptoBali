@@ -12,3 +12,7 @@ ocean-kit/**/node_modules/
 .env.*
 package-lock.json
 ocean-kit/**/package-lock.json
+node_modules/
+ocean-kit/**/node_modules/
+package-lock.json
+ocean-kit/**/package-lock.json
