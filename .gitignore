@@ -10,3 +10,5 @@ ocean-kit/**/node_modules/
 .DS_Store
 .env
 .env.*
+package-lock.json
+ocean-kit/**/package-lock.json
